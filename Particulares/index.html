@@ -55,7 +55,7 @@
 									<ul>
 										<li><a href="https://friedrichpre.com/">Home</a></li>
 										
-										<li><a href="https://friedrichpre.com/clasesenlinea">Clases en línea</a></li>
+										<li><a href="https://friedrichpre.com/Particulares">Clases en línea</a></li>
 										
 										
 									</ul>
@@ -66,68 +66,54 @@
 				</header>
 
 				<!-- Main -->
-					<article id="main">
-						<header>
-							<h2>Generic Page</h2>
-							<p>llena el formulario</p>
-						</header>
-						<section class="wrapper style5">
-							<div class="inner">
-								<section>
-									<h4>Form</h4>
-									<form method="post" action="#">
-										<div class="row gtr-uniform">
-											<div class="col-6 col-12-xsmall">
-												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
-											</div>
-											<div class="col-6 col-12-xsmall">
-												<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
-											</div>
-											<div class="col-12">
-												<select name="demo-category" id="demo-category">
-													<option value="">- Category -</option>
-													<option value="1">Manufacturing</option>
-													<option value="1">Shipping</option>
-													<option value="1">Administration</option>
-													<option value="1">Human Resources</option>
-												</select>
-											</div>
-											<div class="col-4 col-12-small">
-												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-												<label for="demo-priority-low">Low</label>
-											</div>
-											<div class="col-4 col-12-small">
-												<input type="radio" id="demo-priority-normal" name="demo-priority">
-												<label for="demo-priority-normal">Normal</label>
-											</div>
-											<div class="col-4 col-12-small">
-												<input type="radio" id="demo-priority-high" name="demo-priority">
-												<label for="demo-priority-high">High</label>
-											</div>
-											<div class="col-6 col-12-small">
-												<input type="checkbox" id="demo-copy" name="demo-copy">
-												<label for="demo-copy">Email me a copy</label>
-											</div>
-											<div class="col-6 col-12-small">
-												<input type="checkbox" id="demo-human" name="demo-human" checked>
-												<label for="demo-human">Not a robot</label>
-											</div>
-											<div class="col-12">
-												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-											</div>
-											<div class="col-12">
-												<ul class="actions">
-													<li><input type="submit" value="Send Message" class="primary" /></li>
-													<li><input type="reset" value="Reset" /></li>
-												</ul>
-											</div>
-										</div>
-									</form>
-								</section>
+<article id="main">
+    <header>
+        <h2>Clases Particulares</h2>
+        <p>Llena el formulario</p>
+    </header>
+    <section class="wrapper style5">
+        <div class="inner">
+            <section>
+                <h4>Datos</h4>
+                <form id="contact-form">
+                    <div class="row gtr-uniform">
+                        <div class="col-6 col-12-xsmall">
+                            <input type="text" name="nombre" id="demo-name" value="" placeholder="Nombre" required />
+                        </div>
+                        <div class="col-6 col-12-xsmall">
+                            <select name="materia" id="demo-category" required>
+                                <option value="">- Materia -</option>
+                                <option value="Matematica">Matemática</option>
+                                <option value="Fisica">Física</option>
+                                <option value="Quimica">Química</option>
+                                <option value="Ingles">Inglés</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <ul class="actions">
+                                <li><input type="button" value="Enviar Mensaje" class="primary" id="submit-button" /></li>
+                                <li><input type="reset" value="Reset" /></li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </section>
+</article>
 
-							</div>
-						</section>
-					</article>
+<script>
+    document.getElementById("submit-button").addEventListener("click", function () {
+        var nombre = encodeURIComponent(document.getElementById("demo-name").value);
+        var materia = encodeURIComponent(document.getElementById("demo-category").value);
+        var mensaje = "Hola, me llamo " + nombre + " y me interesa una clase de " + materia + ". ¿Podría obtener más información?";
+
+        var whatsappLink = "https://api.whatsapp.com/send?phone=+593984491696&text=" + encodeURIComponent(mensaje);
+        
+        window.location.href = whatsappLink;
+    });
+</script>
+
 
 				<!-- Footer -->
 				<footer id="footer">
